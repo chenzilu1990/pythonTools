@@ -1,5 +1,6 @@
 import os
 from PIL import Image
+import tinifyCompress
 
 
 # for root,dirs,files in os.walk('.'):
@@ -32,3 +33,11 @@ def toWebp(file):
 		img.save('./webp/'+ name + '.webp', "WEBP")
 
 
+def compress(file):
+	if file.endswith('.jpg') or file.endswith('.jpeg') or file.endswith('.png') or file.endswith('.webp'):
+
+		baseName = os.path.basename(file)
+		name = os.path.splitext(baseName)[0]
+		print(baseName, name)
+		toFilePath = './compress/' + name + '.webp'
+		tinifyCompress.compress_core(file,toFilePath, -1)
