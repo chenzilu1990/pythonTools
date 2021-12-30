@@ -15,7 +15,7 @@ def blendWithFlag(file):
 
 		baseName = os.path.basename(file)
 		name = os.path.splitext(baseName)[0]
-		# print(baseName, name)
+		print(baseName, name)
 		img = Image.open(file).convert('RGBA')
 		img = img.resize((1000, 1000))
 
