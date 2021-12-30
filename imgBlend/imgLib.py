@@ -28,7 +28,7 @@ def toWebp(file):
 	if file.endswith('.jpg') or file.endswith('.jpeg') or file.endswith('.png'):
 		baseName = os.path.basename(file)
 		name = os.path.splitext(baseName)[0]
-		# print(baseName, name)
+		print(baseName, name)
 		img = Image.open(file).convert("RGBA")
 		img.save('./webp/'+ name + '.webp', "WEBP")
 
